@@ -1,2 +1,4 @@
-package africa.semicolon.dto.Request;public class DepositRequest {
+package africa.semicolon.dto.Request;
+
+public class DepositRequest {
 }
