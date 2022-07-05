@@ -9,6 +9,8 @@ import africa.semicolon.dto.Response.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 
 @Service
 public class BankUserServiceImpl implements BankUserService{
@@ -28,6 +30,13 @@ public class BankUserServiceImpl implements BankUserService{
     }
     @Override
     public LoginUserResponse loginRequest(LoginUserRequest loginUserRequest) {
+        Optional<BankUser> savedUser = bankUserRepository.findByEmail(loginUserRequest.getEmail());
+        if (savedUser.isPresent()){
+            if (savedUser.get().getPassword().equals(loginUserRequest.getPassword())){
+                LoginUserResponse loginUserResponse = new LoginUserResponse();
+                loginUserResponse.
+            }
+        }
 
         return null;
     }
