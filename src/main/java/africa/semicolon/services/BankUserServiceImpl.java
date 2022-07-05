@@ -1,5 +1,6 @@
 package africa.semicolon.services;
 
+import africa.semicolon.Exceptions.EmailNotFoundException;
 import africa.semicolon.Exceptions.UserAlreadyExistException;
 import africa.semicolon.Utils.Mapper;
 import africa.semicolon.data.models.BankUser;
@@ -34,11 +35,11 @@ public class BankUserServiceImpl implements BankUserService{
         if (savedUser.isPresent()){
             if (savedUser.get().getPassword().equals(loginUserRequest.getPassword())){
                 LoginUserResponse loginUserResponse = new LoginUserResponse();
-                loginUserResponse.
+                loginUserResponse.setMessage("Welcome back " + savedUser.get().getFirstName());
+                return loginUserResponse;
             }
         }
-
-        return null;
+        throw new EmailNotFoundException("Email not found");
     }
 
     @Override

@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="08e42aa7-7c21-4d4a-9f2b-61f7585c0739" name="Changes" comment="A financial App">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/data/repositories/BankUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/data/repositories/BankUserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/dto/Request/LoginUserRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/dto/Request/LoginUserRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/dto/Response/LoginUserResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/dto/Response/LoginUserResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/controllers/BankUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/controllers/BankUserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/services/BankUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/services/BankUserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,27 +37,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.go.format.on.save.advertiser.fired": "true",
-    "RunOnceActivity.go.formatter.settings.were.checked": "true",
-    "RunOnceActivity.go.migrated.go.modules.settings": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "go.import.settings.migrated": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "spring.configuration.checksum": "f4ddb0fe229cc965eb520ec23b891c16"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.format.on.save.advertiser.fired&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;f4ddb0fe229cc965eb520ec23b891c16&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="africa.semicolon.Exceptions" />
@@ -100,6 +98,8 @@
       <workItem from="1656310739605" duration="888000" />
       <workItem from="1656358422755" duration="3529000" />
       <workItem from="1656986970465" duration="4704000" />
+      <workItem from="1657023207462" duration="599000" />
+      <workItem from="1657048755605" duration="2171000" />
     </task>
     <task id="LOCAL-00001" summary="A financial App">
       <created>1656310937936</created>
