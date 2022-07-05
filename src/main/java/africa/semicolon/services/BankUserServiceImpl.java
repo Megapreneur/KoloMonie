@@ -1,5 +1,7 @@
 package africa.semicolon.services;
 
+import africa.semicolon.Exceptions.UserAlreadyExistException;
+import africa.semicolon.Utils.Mapper;
 import africa.semicolon.data.models.BankUser;
 import africa.semicolon.data.repositories.BankUserRepository;
 import africa.semicolon.dto.Request.*;
@@ -14,24 +16,19 @@ public class BankUserServiceImpl implements BankUserService{
     private BankUserRepository bankUserRepository;
     @Override
     public RegisterUserResponse registerResponse(RegisterUserRequest request) {
+        if (bankUserRepository.existsByEmail(request.getEmail())) throw new UserAlreadyExistException("Email already exist");
         BankUser user = new BankUser();
-        user.setFirstName(request.getFirstName());
-        user.setLastName(request.getLastName());
-        user.setEmail(request.getEmail());
-        user.setAddress(request.getAddress());
-        user.setPhoneNumber(request.getPhoneNumber());
+        Mapper.map(request, user);
 
         BankUser savedUser = bankUserRepository.save(user);
         RegisterUserResponse userResponse = new RegisterUserResponse();
-        userResponse.setMessage(savedUser.getFirstName()  + " Account successfully created");
-        userResponse.setAccountNumber("Your account number is ");
-
-
+        Mapper.map(savedUser, userResponse);
 
         return userResponse;
     }
     @Override
     public LoginUserResponse loginRequest(LoginUserRequest loginUserRequest) {
+
         return null;
     }
 
