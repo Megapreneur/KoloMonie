@@ -10,6 +10,8 @@ import africa.semicolon.dto.Response.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 
 
@@ -36,6 +38,7 @@ public class BankUserServiceImpl implements BankUserService{
             if (savedUser.get().getPassword().equals(loginUserRequest.getPassword())){
                 LoginUserResponse loginUserResponse = new LoginUserResponse();
                 loginUserResponse.setMessage("Welcome back " + savedUser.get().getFirstName());
+                Mapper.map(savedUser, loginUserResponse);
                 return loginUserResponse;
             }
         }
@@ -44,7 +47,22 @@ public class BankUserServiceImpl implements BankUserService{
 
     @Override
     public DepositResponse deposit(DepositRequest depositRequest) {
-        return null;
+        Optional<BankUser> savedUser = bankUserRepository.findByEmail(depositRequest.getEmail());
+        if (savedUser.isPresent()){
+            if (depositRequest.getAmount() < 0){
+                savedUser.get().setBalance(savedUser.get().getBalance() + depositRequest.getAmount());
+
+                DepositResponse depositResponse = new DepositResponse();
+                depositResponse.setMessage("The deposit of " + depositRequest.getAmount() + " to " +
+                        savedUser.get().getFirstName() + " " + savedUser.get().getLastName() + " was successful");
+                depositResponse.setLocalDateTime(LocalDateTime.parse(DateTimeFormatter.ofPattern("EEEE, dd/MM/yyyy, hh:mm, a")
+                        .format(savedUser.get().getLocalDateTime())));
+                return depositResponse;
+            }
+        }
+
+
+        throw new IllegalArgumentException("Invalid deposit");
     }
 
     @Override

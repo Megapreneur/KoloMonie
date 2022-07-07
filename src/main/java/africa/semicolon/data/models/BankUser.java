@@ -5,6 +5,9 @@ import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+
 @Data
 @RequiredArgsConstructor 
 @NoArgsConstructor
@@ -26,4 +29,6 @@ public class BankUser {
     private String occupation;
     private String accountNumber;
     private String password;
+    private int balance;
+    private LocalDateTime localDateTime;
 }

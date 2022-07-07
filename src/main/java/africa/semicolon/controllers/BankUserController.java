@@ -1,7 +1,9 @@
 package africa.semicolon.controllers;
 
+import africa.semicolon.dto.Request.DepositRequest;
 import africa.semicolon.dto.Request.LoginUserRequest;
 import africa.semicolon.dto.Request.RegisterUserRequest;
+import africa.semicolon.dto.Response.DepositResponse;
 import africa.semicolon.dto.Response.LoginUserResponse;
 import africa.semicolon.dto.Response.RegisterUserResponse;
 import africa.semicolon.services.BankUserService;
@@ -23,4 +25,9 @@ public class BankUserController {
     public LoginUserResponse loginRequest(@RequestBody LoginUserRequest loginUserRequest){
         return bankUserService.loginRequest(loginUserRequest);
     }
+    @PostMapping("/bankUser/deposit")
+    public DepositResponse deposit(@RequestBody DepositRequest depositRequest){
+        return bankUserService.deposit(depositRequest);
+    }
+
 }
