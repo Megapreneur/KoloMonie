@@ -11,6 +11,6 @@ import java.math.BigDecimal;
 public class DepositRequest {
 //    private String firstName;
 //    private String lastName;
-    private int amount;
     private String accountNumber;
+    private int amount;
 }

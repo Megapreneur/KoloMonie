@@ -27,7 +27,7 @@ public class BankUserServiceImpl implements BankUserService{
         BankUser user = new BankUser();
         Mapper.map(request, user);
         String accountNumber = String.valueOf(UUID.randomUUID().getMostSignificantBits());
-        accountNumber = accountNumber.substring(1, 10);
+        accountNumber = accountNumber.substring(1, 11);
         user.setAccountNumber(accountNumber);
 
         BankUser savedUser = bankUserRepository.save(user);
@@ -63,8 +63,9 @@ public class BankUserServiceImpl implements BankUserService{
                 bankUserRepository.save(savedUser.get());
 
                 return depositResponse;
+            }else{
+                throw new IllegalArgumentException("Invalid amount");
             }
-            throw new IllegalArgumentException("Invalid amount");
         }
         throw new IllegalArgumentException("Invalid Account");
     }
@@ -76,6 +77,14 @@ public class BankUserServiceImpl implements BankUserService{
 
     @Override
     public WithdrawalResponse withdrawal(WithdrawalRequest withdrawalRequest) {
+        Optional<BankUser>savedUser = bankUserRepository.findByAccountNumber(withdrawalRequest.getAccountNumber());
+        if (savedUser.isPresent()){
+            if (savedUser.get().getPassword().equals(withdrawalRequest.getPassword())){
+                if (savedUser.get().getBalance() >= withdrawalRequest.getAmount() && withdrawalRequest.getAmount() > 0){
+
+                }
+            }
+        }
         return null;
     }
 
