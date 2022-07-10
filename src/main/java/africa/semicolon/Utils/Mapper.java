@@ -19,7 +19,7 @@ public class Mapper {
     }
     public static void map(BankUser savedUser, RegisterUserResponse userResponse) {
         userResponse.setMessage("Welcome on board "+ savedUser.getFirstName().toUpperCase() + ". Your account creation was successful.");
-        userResponse.setAccountNumber("Your account number is ");
+        userResponse.setAccountNumber("Your account number is " + savedUser.getAccountNumber());
 
     }
 

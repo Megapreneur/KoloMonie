@@ -4,7 +4,7 @@ import africa.semicolon.dto.Request.*;
 import africa.semicolon.dto.Response.*;
 
 public interface BankUserService {
-    RegisterUserResponse registerResponse(RegisterUserRequest request);
+    RegisterUserResponse createAccount(RegisterUserRequest request);
     LoginUserResponse loginRequest(LoginUserRequest loginUserRequest);
     DepositResponse deposit(DepositRequest depositRequest);
     TransferResponse transfer(TransferRequest transferRequest);

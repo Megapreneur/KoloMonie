@@ -13,5 +13,4 @@ public class DepositRequest {
 //    private String lastName;
     private int amount;
     private String accountNumber;
-    private String email;
 }

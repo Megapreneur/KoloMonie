@@ -19,7 +19,7 @@ public class BankUserController {
 
     @PostMapping("/bankUser/registration")
     public RegisterUserResponse register (@RequestBody RegisterUserRequest request){
-        return bankUserService.registerResponse(request);
+        return bankUserService.createAccount(request);
     }
     @PostMapping("/bankUser/login")
     public LoginUserResponse loginRequest(@RequestBody LoginUserRequest loginUserRequest){

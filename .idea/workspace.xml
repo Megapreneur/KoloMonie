@@ -6,8 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="08e42aa7-7c21-4d4a-9f2b-61f7585c0739" name="Changes" comment="A financial App">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/data/models/BankUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/data/models/BankUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/dto/Response/DepositResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/dto/Response/DepositResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/Utils/Mapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/Utils/Mapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/controllers/BankUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/controllers/BankUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/data/repositories/BankUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/data/repositories/BankUserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/dto/Request/DepositRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/dto/Request/DepositRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/dto/Request/RegisterUserRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/dto/Request/RegisterUserRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/services/BankUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/services/BankUserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/services/BankUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/services/BankUserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -103,7 +107,7 @@
       <workItem from="1657048755605" duration="4343000" />
       <workItem from="1657106181356" duration="2940000" />
       <workItem from="1657142909350" duration="9327000" />
-      <workItem from="1657476770501" duration="6238000" />
+      <workItem from="1657476770501" duration="11587000" />
     </task>
     <task id="LOCAL-00001" summary="A financial App">
       <created>1656310937936</created>
@@ -140,7 +144,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657477604329</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="A financial App">
+      <created>1657483549773</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1657483549773</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

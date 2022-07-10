@@ -13,17 +13,22 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Optional;
+import java.util.UUID;
 
 
 @Service
 public class BankUserServiceImpl implements BankUserService{
     @Autowired
     private BankUserRepository bankUserRepository;
+
     @Override
-    public RegisterUserResponse registerResponse(RegisterUserRequest request) {
+    public RegisterUserResponse createAccount(RegisterUserRequest request) {
         if (bankUserRepository.existsByEmail(request.getEmail())) throw new UserAlreadyExistException("Email already exist");
         BankUser user = new BankUser();
         Mapper.map(request, user);
+        String accountNumber = String.valueOf(UUID.randomUUID().getMostSignificantBits());
+        accountNumber = accountNumber.substring(1, 10);
+        user.setAccountNumber(accountNumber);
 
         BankUser savedUser = bankUserRepository.save(user);
         RegisterUserResponse userResponse = new RegisterUserResponse();
@@ -44,10 +49,9 @@ public class BankUserServiceImpl implements BankUserService{
         }
         throw new EmailNotFoundException("Email not found");
     }
-
     @Override
     public DepositResponse deposit(DepositRequest depositRequest) {
-        Optional<BankUser> savedUser = bankUserRepository.findByEmail(depositRequest.getEmail());
+        Optional<BankUser> savedUser = bankUserRepository.findByAccountNumber(depositRequest.getAccountNumber());
         if (savedUser.isPresent()){
             if (depositRequest.getAmount() > 0){
                 savedUser.get().setBalance(savedUser.get().getBalance() + depositRequest.getAmount());
@@ -62,9 +66,7 @@ public class BankUserServiceImpl implements BankUserService{
             }
             throw new IllegalArgumentException("Invalid amount");
         }
-
-
-        throw new IllegalArgumentException("Invalid deposit");
+        throw new IllegalArgumentException("Invalid Account");
     }
 
     @Override

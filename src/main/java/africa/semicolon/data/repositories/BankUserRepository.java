@@ -11,4 +11,5 @@ public interface BankUserRepository extends MongoRepository<BankUser, String> {
 
     Optional<BankUser> findByEmail(String email);
 
+    Optional<BankUser> findByAccountNumber(String accountNumber);
 }
