@@ -81,6 +81,7 @@ public class BankUserServiceImpl implements BankUserService{
         if (savedUser.isPresent()){
             if (savedUser.get().getPassword().equals(withdrawalRequest.getPassword())){
                 if (savedUser.get().getBalance() >= withdrawalRequest.getAmount() && withdrawalRequest.getAmount() > 0){
+                    savedUser.get().setBalance(savedUser.get().getBalance() - withdrawalRequest.getAmount());
 
                 }
             }
