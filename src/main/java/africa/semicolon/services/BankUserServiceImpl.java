@@ -51,14 +51,16 @@ public class BankUserServiceImpl implements BankUserService{
         if (savedUser.isPresent()){
             if (depositRequest.getAmount() > 0){
                 savedUser.get().setBalance(savedUser.get().getBalance() + depositRequest.getAmount());
-
                 DepositResponse depositResponse = new DepositResponse();
                 depositResponse.setMessage("The deposit of " + depositRequest.getAmount() + " to " +
                         savedUser.get().getFirstName() + " " + savedUser.get().getLastName() + " was successful");
-//                depositResponse.setLocalDateTime(LocalDateTime.parse(DateTimeFormatter.ofPattern("EEEE, dd/MM/yyyy, hh:mm, a")
-//                        .format(savedUser.get().getLocalDateTime())));
+                depositResponse.setBalance(savedUser.get().getBalance());
+
+                bankUserRepository.save(savedUser.get());
+
                 return depositResponse;
             }
+            throw new IllegalArgumentException("Invalid amount");
         }
 
 

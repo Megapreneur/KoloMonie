@@ -14,9 +14,11 @@ import java.time.LocalDateTime;
 @Document("Bank")
 public class BankUser {
     @Id
-    private int id;
+    private String id;
+
     @NonNull
     private String firstName;
+
     @NonNull
     private String lastName;
     @NonNull
@@ -31,4 +33,7 @@ public class BankUser {
     private String password;
     private int balance;
     private LocalDateTime localDateTime;
+
+
+
 }

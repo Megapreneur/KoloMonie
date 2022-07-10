@@ -10,5 +10,6 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class DepositResponse {
     private String message;
-    private LocalDateTime localDateTime;
+    private int balance;
+//    private LocalDateTime localDateTime;
 }
