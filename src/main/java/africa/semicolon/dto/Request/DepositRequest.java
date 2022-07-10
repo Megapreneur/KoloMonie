@@ -9,8 +9,8 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @Data
 public class DepositRequest {
-    private String firstName;
-    private String lastName;
+//    private String firstName;
+//    private String lastName;
     private int amount;
     private String accountNumber;
     private String email;
