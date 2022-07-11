@@ -105,7 +105,7 @@ public class BankUserServiceImpl implements BankUserService{
         if (savedUser.isPresent()){
             if (savedUser.get().getPassword().equals(checkBalanceRequest.getPassword())){
                 CheckBalanceResponse checkBalanceResponse = new CheckBalanceResponse();
-                checkBalanceResponse.setMessage(savedUser.get().getFirstName() +". Your remaining balance is " + savedUser.get().getBalance());
+                checkBalanceResponse.setMessage(savedUser.get().getFirstName().toUpperCase() +", your remaining balance is " + savedUser.get().getBalance());
                 return checkBalanceResponse;
             }else{
                 throw new WrongPasswordException("Password incorrect");
