@@ -80,13 +80,22 @@ public class BankUserServiceImpl implements BankUserService{
                         sender.get().setBalance(sender.get().getBalance() - transferRequest.getAmount());
                         receiver.get().setBalance(receiver.get().getBalance() + transferRequest.getAmount());
                         TransferResponse transferResponse = new TransferResponse();
-                        transferResponse.setMessage();
+                        transferResponse.setMessage("You have successfully transferred " + transferRequest.getAmount()
+                                + " to " + receiver.get().getFirstName() + "." + " Your remaining balance is "
+                                + sender.get().getBalance());
+                        return transferResponse;
+                    }else{
+                        throw new InvalidAmountException("Invalid amount");
                     }
-
+                }else{
+                    throw  new AccountNotFoundException("Receiver's account not found");
                 }
+            }else{
+                throw new WrongPasswordException("Incorrect password");
             }
+        }else {
+            throw new AccountNotFoundException("Account not found");
         }
-        return null;
     }
 
     @Override
