@@ -71,6 +71,7 @@ public class BankUserServiceImpl implements BankUserService{
 
     @Override
     public TransferResponse transfer(TransferRequest transferRequest) {
+        Optional<BankUser>savedUser = bankUserRepository.findByAccountNumber(transferRequest.getAccountNumber());
         return null;
     }
 
@@ -100,8 +101,17 @@ public class BankUserServiceImpl implements BankUserService{
 
     @Override
     public CheckBalanceResponse checkBalance(CheckBalanceRequest checkBalanceRequest) {
-        return null;
+        Optional<BankUser>savedUser = bankUserRepository.findByAccountNumber(checkBalanceRequest.getAccountNumber());
+        if (savedUser.isPresent()){
+            if (savedUser.get().getPassword().equals(checkBalanceRequest.getPassword())){
+                CheckBalanceResponse checkBalanceResponse = new CheckBalanceResponse();
+                checkBalanceResponse.setMessage(savedUser.get().getFirstName() +". Your remaining balance is " + savedUser.get().getBalance());
+                return checkBalanceResponse;
+            }else{
+                throw new WrongPasswordException("Password incorrect");
+            }
+        }else{
+            throw new AccountNotFoundException("Account not Found");
+        }
     }
-
-
 }
