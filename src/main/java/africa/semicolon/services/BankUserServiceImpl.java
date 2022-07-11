@@ -71,7 +71,8 @@ public class BankUserServiceImpl implements BankUserService{
 
     @Override
     public TransferResponse transfer(TransferRequest transferRequest) {
-        Optional<BankUser>savedUser = bankUserRepository.findByAccountNumber(transferRequest.getAccountNumber());
+        Optional<BankUser>sender = bankUserRepository.findByAccountNumber(transferRequest.getAccountNumber());
+        Optional<BankUser>reciever = bankUserRepository.findByAccountNumber()
         return null;
     }
 
@@ -90,7 +91,6 @@ public class BankUserServiceImpl implements BankUserService{
                 }else{
                     throw new InvalidAmountException("Invalid amount");
                 }
-
             }else {
                 throw new WrongPasswordException("Password incorrect");
             }
