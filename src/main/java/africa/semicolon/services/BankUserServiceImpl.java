@@ -90,11 +90,12 @@ public class BankUserServiceImpl implements BankUserService{
                     throw new InvalidAmountException("Invalid amount");
                 }
 
+            }else {
+                throw new WrongPasswordException("Password incorrect");
             }
-            throw new WrongPasswordException("Password incorrect");
+        }else {
+            throw new AccountNotFoundException("Account not Found");
         }
-
-        throw new AccountNotFoundException("Account not Found");
     }
 
     @Override

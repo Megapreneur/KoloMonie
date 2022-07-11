@@ -1,6 +1,6 @@
 package africa.semicolon.Exceptions;
 
-public class InvalidAmountException extends Throwable {
-    public InvalidAmountException(String invalid_amount) {
+public class InvalidAmountException extends RuntimeException{
+    public InvalidAmountException(String message) {
     }
 }
