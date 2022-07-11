@@ -97,7 +97,6 @@ public class BankUserServiceImpl implements BankUserService{
             throw new AccountNotFoundException("Account not found");
         }
     }
-
     @Override
     public WithdrawalResponse withdrawal(WithdrawalRequest withdrawalRequest) {
         Optional<BankUser>savedUser = bankUserRepository.findByAccountNumber(withdrawalRequest.getAccountNumber());

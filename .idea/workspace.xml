@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="08e42aa7-7c21-4d4a-9f2b-61f7585c0739" name="Changes" comment="A financial App">
+      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/controllers/BankUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/controllers/BankUserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/services/BankUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/services/BankUserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -101,7 +102,7 @@
       <workItem from="1657106181356" duration="2940000" />
       <workItem from="1657142909350" duration="9327000" />
       <workItem from="1657476770501" duration="20906000" />
-      <workItem from="1657559902650" duration="3674000" />
+      <workItem from="1657559902650" duration="4167000" />
     </task>
     <task id="LOCAL-00001" summary="A financial App">
       <created>1656310937936</created>
@@ -215,7 +216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657562852957</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="A financial App">
+      <created>1657563582779</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1657563582779</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

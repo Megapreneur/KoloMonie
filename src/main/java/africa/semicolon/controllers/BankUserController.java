@@ -33,5 +33,9 @@ public class BankUserController {
     public CheckBalanceResponse checkBalance(@RequestBody CheckBalanceRequest checkBalanceRequest){
         return bankUserService.checkBalance(checkBalanceRequest);
     }
+    @PostMapping("/bankUser/transfer")
+    public TransferResponse transfer(@RequestBody TransferRequest transferRequest){
+        return bankUserService.transfer(transferRequest);
+    }
 
 }
