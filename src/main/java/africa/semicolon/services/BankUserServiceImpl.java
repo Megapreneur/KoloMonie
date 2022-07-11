@@ -1,7 +1,6 @@
 package africa.semicolon.services;
 
-import africa.semicolon.Exceptions.EmailNotFoundException;
-import africa.semicolon.Exceptions.UserAlreadyExistException;
+import africa.semicolon.Exceptions.*;
 import africa.semicolon.Utils.Mapper;
 import africa.semicolon.data.models.BankUser;
 import africa.semicolon.data.repositories.BankUserRepository;
@@ -82,11 +81,20 @@ public class BankUserServiceImpl implements BankUserService{
             if (savedUser.get().getPassword().equals(withdrawalRequest.getPassword())){
                 if (savedUser.get().getBalance() >= withdrawalRequest.getAmount() && withdrawalRequest.getAmount() > 0){
                     savedUser.get().setBalance(savedUser.get().getBalance() - withdrawalRequest.getAmount());
-
+                    WithdrawalResponse withdrawalResponse = new WithdrawalResponse();
+                    withdrawalResponse.setMessage("Txn : Debit" + "\n" + "amount : " + withdrawalRequest.getAmount());
+                    withdrawalResponse.setAccountBalance(savedUser.get().getBalance());
+                    bankUserRepository.save(savedUser.get());
+                    return withdrawalResponse;
+                }else{
+                    throw new InvalidAmountException("Invalid amount");
                 }
+
             }
+            throw new WrongPasswordException("Password incorrect");
         }
-        return null;
+
+        throw new AccountNotFoundException("Account not Found");
     }
 
     @Override
