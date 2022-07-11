@@ -71,8 +71,21 @@ public class BankUserServiceImpl implements BankUserService{
 
     @Override
     public TransferResponse transfer(TransferRequest transferRequest) {
-        Optional<BankUser>sender = bankUserRepository.findByAccountNumber(transferRequest.getAccountNumber());
-        Optional<BankUser>reciever = bankUserRepository.findByAccountNumber()
+        Optional<BankUser>sender = bankUserRepository.findByAccountNumber(transferRequest.getSenderAccountNumber());
+        if (sender.isPresent()){
+            if (sender.get().getPassword().equals(transferRequest.getPassword())){
+                Optional<BankUser>receiver = bankUserRepository.findByAccountNumber(transferRequest.getReceiverAccountNumber());
+                if (receiver.isPresent()){
+                    if (transferRequest.getAmount() > 0 && sender.get().getBalance() >= transferRequest.getAmount()){
+                        sender.get().setBalance(sender.get().getBalance() - transferRequest.getAmount());
+                        receiver.get().setBalance(receiver.get().getBalance() + transferRequest.getAmount());
+                        TransferResponse transferResponse = new TransferResponse();
+                        transferResponse.setMessage();
+                    }
+
+                }
+            }
+        }
         return null;
     }
 
