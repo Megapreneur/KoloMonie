@@ -83,6 +83,8 @@ public class BankUserServiceImpl implements BankUserService{
                         transferResponse.setMessage("You have successfully transferred " + transferRequest.getAmount()
                                 + " to " + receiver.get().getFirstName() + "." + " Your remaining balance is "
                                 + sender.get().getBalance());
+                        bankUserRepository.save(sender.get());
+                        bankUserRepository.save(receiver.get());
                         return transferResponse;
                     }else{
                         throw new InvalidAmountException("Invalid amount");
