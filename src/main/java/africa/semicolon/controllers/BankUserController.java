@@ -4,6 +4,7 @@ import africa.semicolon.dto.Request.*;
 import africa.semicolon.dto.Response.*;
 import africa.semicolon.services.BankUserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -29,7 +30,7 @@ public class BankUserController {
     public WithdrawalResponse withdrawal(@RequestBody WithdrawalRequest withdrawalRequest){
         return bankUserService.withdrawal(withdrawalRequest);
     }
-    @PostMapping("/bankUser/balance")
+    @GetMapping("/bankUser/balance")
     public CheckBalanceResponse checkBalance(@RequestBody CheckBalanceRequest checkBalanceRequest){
         return bankUserService.checkBalance(checkBalanceRequest);
     }
