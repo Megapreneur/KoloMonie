@@ -1,6 +1,7 @@
 package africa.semicolon.data.models;
 
 
+import africa.semicolon.data.models.enums.AccountType;
 import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -33,6 +34,7 @@ public class BankUser {
     private String password;
     private int balance;
     private LocalDateTime localDateTime;
+    private AccountType accountType;
 
 
 

@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="08e42aa7-7c21-4d4a-9f2b-61f7585c0739" name="Changes" comment="A financial App">
+      <change afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/data/models/enums/AccountType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/controllers/BankUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/controllers/BankUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/data/models/BankUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/data/models/BankUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semicolon/services/BankUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semicolon/services/BankUserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,9 +21,11 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
+  <component name="GOROOT" url="file:///snap/go/current" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -51,13 +55,15 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+    &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/nutmeg/IdeaProjects/deitelExercises&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;f4ddb0fe229cc965eb520ec23b891c16&quot;
   }
 }</component>
@@ -109,7 +115,34 @@
       <workItem from="1657559902650" duration="8784000" />
       <workItem from="1657627683791" duration="1367000" />
       <workItem from="1657641642834" duration="3248000" />
-      <workItem from="1657747724611" duration="1462000" />
+      <workItem from="1657747724611" duration="2162000" />
+      <workItem from="1657805460000" duration="3806000" />
+      <workItem from="1657876661062" duration="1442000" />
+      <workItem from="1658147846638" duration="621000" />
+      <workItem from="1658449359563" duration="910000" />
+      <workItem from="1658591341304" duration="993000" />
+      <workItem from="1658994033098" duration="874000" />
+      <workItem from="1658994935091" duration="1679000" />
+      <workItem from="1659081257764" duration="540000" />
+      <workItem from="1659090111120" duration="882000" />
+      <workItem from="1659263015738" duration="1184000" />
+      <workItem from="1659529101481" duration="2245000" />
+      <workItem from="1659538640268" duration="599000" />
+      <workItem from="1660398088372" duration="44000" />
+      <workItem from="1660779407624" duration="932000" />
+      <workItem from="1660828457566" duration="599000" />
+      <workItem from="1660892810020" duration="41000" />
+      <workItem from="1660905126177" duration="2495000" />
+      <workItem from="1660918572416" duration="614000" />
+      <workItem from="1662043295489" duration="319000" />
+      <workItem from="1662157891492" duration="1581000" />
+      <workItem from="1663681263473" duration="1103000" />
+      <workItem from="1664750571556" duration="659000" />
+      <workItem from="1664802955766" duration="39000" />
+      <workItem from="1665868200790" duration="2092000" />
+      <workItem from="1665904603815" duration="1203000" />
+      <workItem from="1665923729773" duration="14000" />
+      <workItem from="1667251989690" duration="1903000" />
     </task>
     <task id="LOCAL-00001" summary="A financial App">
       <created>1656310937936</created>
@@ -265,7 +298,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657570667320</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="A financial App">
+      <created>1657749201375</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1657749201375</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

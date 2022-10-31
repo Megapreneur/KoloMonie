@@ -25,9 +25,7 @@ public class BankUserServiceImpl implements BankUserService{
         if (bankUserRepository.existsByEmail(request.getEmail())) throw new UserAlreadyExistException("Email already exist");
         BankUser user = new BankUser();
         Mapper.map(request, user);
-        String accountNumber = String.valueOf(UUID.randomUUID().getMostSignificantBits());
-        accountNumber = accountNumber.substring(1, 11);
-        user.setAccountNumber(accountNumber);
+        user.setAccountNumber(generateAccountNumber(user));
 
         BankUser savedUser = bankUserRepository.save(user);
         RegisterUserResponse userResponse = new RegisterUserResponse();
@@ -35,6 +33,15 @@ public class BankUserServiceImpl implements BankUserService{
 
         return userResponse;
     }
+    private String generateAccountNumber(BankUser user){
+        String accountNumber = String.valueOf(UUID.randomUUID().getMostSignificantBits());
+        accountNumber = accountNumber.substring(1, 11);
+        user.setAccountNumber(accountNumber);
+        return accountNumber;
+    }
+//    private String generateNIN(BankUser user){
+//
+//    }
     @Override
     public LoginUserResponse loginRequest(LoginUserRequest loginUserRequest) {
         Optional<BankUser> savedUser = bankUserRepository.findByEmail(loginUserRequest.getEmail());
