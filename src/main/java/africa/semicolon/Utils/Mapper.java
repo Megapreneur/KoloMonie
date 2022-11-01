@@ -16,6 +16,7 @@ public class Mapper {
         user.setEmail(request.getEmail());
         user.setOccupation(request.getOccupation());
         user.setPassword(request.getPassword());
+        user.setAccountType(request.getAccountType());
     }
     public static void map(BankUser savedUser, RegisterUserResponse userResponse) {
         userResponse.setMessage("Welcome on board "+ savedUser.getFirstName().toUpperCase() + ". Your account creation was successful.");

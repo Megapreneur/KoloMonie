@@ -14,6 +14,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 import java.util.UUID;
 
+import static africa.semicolon.Utils.ValidateEmail.isValidEmail;
+
 
 @Service
 public class BankUserServiceImpl implements BankUserService{
@@ -22,16 +24,20 @@ public class BankUserServiceImpl implements BankUserService{
 
     @Override
     public RegisterUserResponse createAccount(RegisterUserRequest request) {
-        if (bankUserRepository.existsByEmail(request.getEmail())) throw new UserAlreadyExistException("Email already exist");
-        BankUser user = new BankUser();
-        Mapper.map(request, user);
-        user.setAccountNumber(generateAccountNumber(user));
+        if (isValidEmail(request.getEmail())){
+            if (bankUserRepository.existsByEmail(request.getEmail())) throw new UserAlreadyExistException("Email already exist");
+            BankUser user = new BankUser();
+            Mapper.map(request, user);
+            user.setAccountNumber(generateAccountNumber(user));
 
-        BankUser savedUser = bankUserRepository.save(user);
-        RegisterUserResponse userResponse = new RegisterUserResponse();
-        Mapper.map(savedUser, userResponse);
+            BankUser savedUser = bankUserRepository.save(user);
+            RegisterUserResponse userResponse = new RegisterUserResponse();
+            Mapper.map(savedUser, userResponse);
 
-        return userResponse;
+            return userResponse;
+        }
+        throw new InvalidEmailException("Invalid email address!");
+
     }
     private String generateAccountNumber(BankUser user){
         String accountNumber = String.valueOf(UUID.randomUUID().getMostSignificantBits());

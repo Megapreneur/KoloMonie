@@ -1,5 +1,6 @@
 package africa.semicolon.dto.Request;
 
+import africa.semicolon.data.models.enums.AccountType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,6 +17,7 @@ public class RegisterUserRequest {
     private String phoneNumber;
     private String occupation;
     private String password;
+    private AccountType accountType;
 //    private String accountNumber;
 
 
