@@ -33,7 +33,6 @@ public class BankUserServiceImpl implements BankUserService{
             BankUser savedUser = bankUserRepository.save(user);
             RegisterUserResponse userResponse = new RegisterUserResponse();
             Mapper.map(savedUser, userResponse);
-
             return userResponse;
         }
         throw new InvalidEmailException("Invalid email address!");
@@ -45,9 +44,6 @@ public class BankUserServiceImpl implements BankUserService{
         user.setAccountNumber(accountNumber);
         return accountNumber;
     }
-//    private String generateNIN(BankUser user){
-//
-//    }
     @Override
     public LoginUserResponse loginRequest(LoginUserRequest loginUserRequest) {
         Optional<BankUser> savedUser = bankUserRepository.findByEmail(loginUserRequest.getEmail());
