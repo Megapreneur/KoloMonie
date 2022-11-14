@@ -9,8 +9,6 @@ import africa.semicolon.dto.Response.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -27,6 +25,7 @@ public class BankUserServiceImpl implements BankUserService{
         if (isValidEmail(request.getEmail())){
             if (bankUserRepository.existsByEmail(request.getEmail())) throw new UserAlreadyExistException("Email already exist");
             BankUser user = new BankUser();
+
             Mapper.map(request, user);
             user.setAccountNumber(generateAccountNumber(user));
 
